@@ -37,7 +37,7 @@ add_subdirectory(lib)
 add_executable(nexamine 
   ${CMAKE_CURRENT_SOURCE_DIR}/main.c
 )
-target_link_libraries(nexamine PUBLIC nexa clog)
+target_link_libraries(nexamine PUBLIC nexa clog yacap)
 
 
 # Lint
