@@ -19,6 +19,7 @@
 #include <clog.h>
 
 #include "include/nexamine.h"
+#include "lib/ctlsock.h"
 
 
 int
