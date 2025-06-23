@@ -16,17 +16,21 @@
  *
  *  Author: Vahid Mardani <vahid.mardani@gmail.com>
  */
-#include <clog.h>
+#ifndef LIB_CTLSOCK_H_
+#define LIB_CTLSOCK_H_
 
-#include "include/nexamine.h"
+
+// #include <sys/socket.h>
+// #include <netinet/in.h>
+// #include <arpa/inet.h>
 
 
-int
-nexamine(struct nexamine *n) {
-    struct ctlsock *cs = ctlsock_connect(n->target);
-    if (cs == NULL) {
-        ERROR("Control socket creation failed.");
-        return -1;
-    }
-    return -1;
-}
+struct ctlsock {
+};
+
+
+struct ctlsock *
+ctlsock_connect(struct in_addr dst);
+
+
+#endif  // LIB_CTLSOCK_H_

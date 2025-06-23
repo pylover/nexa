@@ -22,9 +22,7 @@
 #include "include/nexamine.h"
 
 
-struct nexamine n = {
-    .y = 1
-};
+static struct nexamine n;
 
 
 int

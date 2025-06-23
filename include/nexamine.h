@@ -20,8 +20,11 @@
 #define INCLUDE_NEXAMINE_H_
 
 
+#include <netinet/in.h>
+
+
 struct nexamine {
-    int y;
+    struct in_addr target;
 };
 
 
