@@ -21,22 +21,17 @@
 #include <stdlib.h>
 
 /* platform */
+/* ... */
 
 /* third party */
 #include <clog.h>
 #include <yacap.h>
+#include <caio/caio.h>
 
 /* local */
-#include "include/nexamine.h"
+#include "include/nexa.h"
+#include "cli/listen.h"
 #include "config.h"
-
-
-static int
-_run(const struct yacap *c, const struct yacap_command *cmd) {
-    INFO("%s v%s", PROJECT_NAME, PROJECT_VERSION);
-    yacap_help_print(c);
-    return 0;
-}
 
 
 static int
@@ -49,18 +44,10 @@ _main(const struct yacap *c, const struct yacap_command *cmd) {
 }
 
 
-/* create and configure yacap structures */
-static struct yacap_command
-_cli_run = {
-    .name = "run",
-    .entrypoint = _run,
-};
-
-
 static struct yacap
 _cli = {
-    .commands = (const struct yacap_command*[]) {
-        &_cli_run,
+    .commands = (struct yacap_command *const[]) {
+        &cli_listen,
         NULL
     },
     .entrypoint = _main,

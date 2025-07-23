@@ -16,21 +16,17 @@
  *
  *  Author: Vahid Mardani <vahid.mardani@gmail.com>
  */
-#ifndef LIB_CTLSOCK_H_
-#define LIB_CTLSOCK_H_
+#ifndef INCLUDE_NEXA_H_
+#define INCLUDE_NEXA_H_
 
 
-// #include <sys/socket.h>
-// #include <netinet/in.h>
-// #include <arpa/inet.h>
-
-
-struct ctlsock {
+struct listen_opts {
+    int foo;
 };
 
 
-struct ctlsock *
-ctlsock_connect(struct in_addr dst);
+int
+listen_main(struct listen_opts *opts);
 
 
-#endif  // LIB_CTLSOCK_H_
+#endif  // INCLUDE_NEXA_H_

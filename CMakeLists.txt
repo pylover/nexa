@@ -30,14 +30,14 @@ include_directories(${PROJECT_SOURCE_DIR} ${PROJECT_BINARY_DIR})
 # menu config
 add_custom_target(menu COMMAND ccmake ${PROJECT_BINARY_DIR} )
 add_custom_target(fresh COMMAND cmake ${PROJECT_SOURCE_DIR} --fresh)
-add_subdirectory(lib)
+
+
+# library
+add_subdirectory(nexa)
 
 
 # executable
-add_executable(nexamine 
-  ${CMAKE_CURRENT_SOURCE_DIR}/main.c
-)
-target_link_libraries(nexamine PUBLIC nexa clog yacap)
+add_subdirectory(cli)
 
 
 # Lint
