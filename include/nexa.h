@@ -20,7 +20,17 @@
 #define INCLUDE_NEXA_H_
 
 
+#include <sys/socket.h>
+#include <netinet/in.h>
+
+
+struct transport {
+    struct sockaddr_storage addr;
+};
+
+
 struct listen_opts {
+    const char *bind;
     int foo;
 };
 

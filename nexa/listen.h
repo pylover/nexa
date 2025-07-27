@@ -1,5 +1,23 @@
-#ifndef LIB_LISTEN_H_
-#define LIB_LISTEN_H_
+// Copyright 2025 Vahid Mardani
+/*
+ * This file is part of nexamine.
+ *  nexamine is free software: you can redistribute it and/or modify it under
+ *  the terms of the GNU General Public License as published by the Free
+ *  Software Foundation, either version 3 of the License, or (at your option)
+ *  any later version.
+ *
+ *  nexamine is distributed in the hope that it will be useful, but WITHOUT
+ *  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ *  FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+ *  more details.
+ *
+ *  You should have received a copy of the GNU General Public License along
+ *  with nexamine. If not, see <https://www.gnu.org/licenses/>.
+ *
+ *  Author: Vahid Mardani <vahid.mardani@gmail.com>
+ */
+#ifndef NEXA_LISTEN_H_
+#define NEXA_LISTEN_H_
 
 
 #include "include/nexa.h"
@@ -7,14 +25,16 @@
 
 typedef struct listen_state {
     struct listen_opts *opts;
+
+    struct transport *master;
 } listen_t;
 
 
-// #undef CAIO_ARG1
-// #undef CAIO_ARG2
-// #undef CAIO_ENTITY
-// #define CAIO_ENTITY listen
-// #include "caio/generic.h"
+#undef CAIO_ARG1
+#undef CAIO_ARG2
+#undef CAIO_ENTITY
+#define CAIO_ENTITY listen
+#include "caio/generic.h"
 
 
-#endif  // LIB_LISTEN_H_
+#endif  // NEXA_LISTEN_H_

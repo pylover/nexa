@@ -32,6 +32,7 @@
 #include "include/nexa.h"
 #include "cli/listen.h"
 #include "config.h"
+#include "cli.h"
 
 
 static int
@@ -55,7 +56,7 @@ _cli = {
 
 
 int
-main(int argc, const char **argv) {
+cli_main(int argc, const char **argv) {
     int ret = EXIT_FAILURE;
     const struct yacap_command *cmd;
     enum yacap_status status = yacap_parse(&_cli, argc, argv, &cmd);

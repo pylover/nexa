@@ -24,6 +24,7 @@
 
 /* third party */
 #include <caio/caio.h>
+#include <clog.h>
 
 /* local */
 #include "config.h"
@@ -35,13 +36,14 @@
 #undef CAIO_ARG2
 #undef CAIO_ENTITY
 #define CAIO_ENTITY listen
-#include "caio/generic.h"
 #include "caio/generic.c"
 
 
 static ASYNC
 listenA(struct caio_task *self, struct listen_state *state) {
     CAIO_BEGIN(self);
+
+    // state->master = icmpt_new(sockaddr
     CAIO_FINALLY(self);
 }
 
@@ -49,7 +51,7 @@ listenA(struct caio_task *self, struct listen_state *state) {
 int
 listen_main(struct listen_opts *opts) {
     int exitstatus = EXIT_SUCCESS;
-    static struct listen_state *state;
+    static struct listen_state *state = NULL;
     static struct caio *caio;
 
     /* allocate state */

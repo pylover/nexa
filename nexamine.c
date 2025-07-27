@@ -16,13 +16,10 @@
  *
  *  Author: Vahid Mardani <vahid.mardani@gmail.com>
  */
-#ifndef NEXA_TRANSPORTS_ICMP_H_
-#define NEXA_TRANSPORTS_ICMP_H_
+#include "cli/cli.h"
 
 
-struct icmptransport {
-    struct transport;
-};
-
-
-#endif  // NEXA_TRANSPORTS_ICMP_H_
+int
+main(int argc, const char **argv) {
+    return cli_main(argc, argv);
+}

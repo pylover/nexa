@@ -38,6 +38,8 @@ add_subdirectory(nexa)
 
 # executable
 add_subdirectory(cli)
+add_executable(nexamine nexamine.c)
+target_link_libraries(nexamine PUBLIC cli)
 
 
 # Lint

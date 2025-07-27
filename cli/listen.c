@@ -45,6 +45,15 @@ _init(struct yacap_command *cmd) {
 
 static enum yacap_eatstatus
 _eat(const struct yacap_option *o, const char *v, struct listen_opts *opts) {
+    if (o == NULL) {
+        return YACAP_EAT_UNRECOGNIZED;
+    }
+
+    switch (o->key) {
+        case 'b':
+            opts->bind = v;
+            break;
+    }
     printf("%s\n", v);
     // TODO: implement
     return YACAP_EAT_OK;
@@ -66,4 +75,8 @@ cli_listen = {
     .eat = (yacap_eater_t)_eat,
     .name = "listen",
     .entrypoint = _listen_main,
+    .options = (const struct yacap_option[]) {
+        {"bind", 'b', "IPADDR", 0, "Bind address for master socket"},
+        {NULL},
+    },
 };
